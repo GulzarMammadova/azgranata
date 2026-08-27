@@ -1,0 +1,33 @@
+.intro {
+  display: grid;
+  grid-template-columns: 520px 420px;
+  justify-content: space-between;
+  align-items: start;
+  margin: -28px 80px 34px;
+  padding-bottom: 30px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+.introLeft,
+.introRight {
+  display: flex;
+  align-items: flex-start;
+}
+
+.intro h4 {
+  margin: 0;
+  font-family: "Playfair Display", serif;
+  font-style: italic;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.2;
+  color: #c4b39f;
+}
+
+.intro p {
+  margin: 0;
+  max-width: 420px;
+  font-size: 13px;
+  line-height: 1.9;
+  color: #5e5b56;
+}/*# sourceMappingURL=AccordionItem.module.css.map */

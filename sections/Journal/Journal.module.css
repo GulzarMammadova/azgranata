@@ -1,0 +1,255 @@
+/* =========================================
+   JOURNAL EDITORIAL
+========================================= */
+.editorial {
+  width: 100%;
+  padding: 0 4.5vw 100px;
+}
+
+.editorialGrid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(220px, 0.38fr) minmax(0, 1fr);
+  align-items: stretch;
+  width: 100%;
+  min-height: 620px;
+}
+
+/* =========================================
+   ARTICLE CARD
+========================================= */
+.editorialCard {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  background: #f3eee5;
+}
+
+.editorialImage {
+  position: relative;
+  width: 100%;
+  height: 420px;
+  overflow: hidden;
+  background: #ded6ca;
+}
+
+.editorialImage img {
+  -o-object-fit: cover;
+     object-fit: cover;
+  transition: transform 0.8s ease;
+}
+
+.editorialCard:hover .editorialImage img {
+  transform: scale(1.04);
+}
+
+/* =========================================
+   LEFT ARTICLE
+========================================= */
+.editorialCardLeft {
+  border-right: 1px solid rgba(75, 61, 48, 0.18);
+}
+
+/* =========================================
+   RIGHT ARTICLE
+========================================= */
+.editorialCardRight {
+  border-left: 1px solid rgba(75, 61, 48, 0.18);
+}
+
+/* =========================================
+   ARTICLE CONTENT
+========================================= */
+.editorialContent {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 38px 48px 45px;
+  flex: 1;
+}
+
+.articleMeta {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 22px;
+  color: #a78a54;
+  font-family: var(--font-sans, Arial, sans-serif);
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+}
+
+.metaDivider {
+  opacity: 0.75;
+}
+
+.editorialTitle {
+  margin: 0;
+  max-width: 520px;
+  color: #282422;
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: clamp(30px, 2.4vw, 42px);
+  font-weight: 400;
+  line-height: 1.05;
+  letter-spacing: -0.025em;
+}
+
+.articleDate {
+  margin-top: auto;
+  padding-top: 26px;
+  color: #a7a097;
+  font-family: var(--font-sans, Arial, sans-serif);
+  font-size: 11px;
+  font-weight: 400;
+  letter-spacing: 0.08em;
+}
+
+/* =========================================
+   EDITORIAL QUOTE
+========================================= */
+.editorialQuote {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 100%;
+  padding: 55px 38px;
+  background: #211f1d;
+  color: #d5c3a4;
+}
+
+.quoteMark {
+  margin-bottom: 42px;
+  color: #6f5d32;
+  font-family: Georgia, serif;
+  font-size: 64px;
+  line-height: 0.5;
+}
+
+.editorialQuote blockquote {
+  margin: 0;
+  color: #d4c09e;
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: clamp(25px, 2vw, 34px);
+  font-style: italic;
+  font-weight: 400;
+  line-height: 1.35;
+}
+
+.quoteAuthor {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 42px;
+  color: #8d8579;
+  font-family: var(--font-sans, Arial, sans-serif);
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 0.22em;
+}
+
+.quoteLine {
+  display: block;
+  width: 18px;
+  height: 1px;
+  background: #5e574d;
+}
+
+/* =========================================
+   TABLET
+========================================= */
+@media (max-width: 1100px) {
+  .editorial {
+    padding: 0 5vw 80px;
+  }
+  .editorialGrid {
+    grid-template-columns: minmax(0, 1fr) minmax(180px, 0.42fr) minmax(0, 1fr);
+  }
+  .editorialImage {
+    height: 340px;
+  }
+  .editorialContent {
+    padding: 30px 28px 36px;
+  }
+  .editorialQuote {
+    padding: 40px 28px;
+  }
+  .quoteMark {
+    margin-bottom: 32px;
+  }
+  .quoteAuthor {
+    margin-top: 32px;
+  }
+}
+/* =========================================
+   MOBILE / TABLET PORTRAIT
+========================================= */
+@media (max-width: 768px) {
+  .editorial {
+    padding: 0 24px 70px;
+  }
+  .editorialGrid {
+    grid-template-columns: 1fr;
+    min-height: auto;
+  }
+  .editorialCardLeft,
+  .editorialCardRight {
+    border: 0;
+  }
+  .editorialCard {
+    border-bottom: 1px solid rgba(75, 61, 48, 0.16);
+  }
+  .editorialImage {
+    height: min(80vw, 480px);
+  }
+  .editorialContent {
+    padding: 28px 0 38px;
+  }
+  .editorialQuote {
+    min-height: 400px;
+    padding: 60px 34px;
+    order: 2;
+  }
+  .editorialCardLeft {
+    order: 1;
+  }
+  .editorialCardRight {
+    order: 3;
+  }
+  .quoteMark {
+    margin-bottom: 35px;
+  }
+  .editorialQuote blockquote {
+    font-size: 32px;
+  }
+  .articleDate {
+    margin-top: 20px;
+  }
+}
+/* =========================================
+   SMALL MOBILE
+========================================= */
+@media (max-width: 480px) {
+  .editorial {
+    padding: 0 20px 55px;
+  }
+  .editorialImage {
+    height: 320px;
+  }
+  .editorialContent {
+    padding: 24px 0 32px;
+  }
+  .editorialQuote {
+    min-height: 360px;
+    padding: 50px 28px;
+  }
+  .editorialTitle {
+    font-size: 32px;
+  }
+  .editorialQuote blockquote {
+    font-size: 29px;
+  }
+  .quoteMark {
+    font-size: 54px;
+  }
+}/*# sourceMappingURL=Journal.module.css.map */

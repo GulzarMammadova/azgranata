@@ -1,0 +1,39 @@
+@use "@styles/variables" as *;
+@use "@styles/typography";
+@use "@styles/animations";
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: $color-background;
+  overflow-x: hidden;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+ul {
+  list-style: none;
+}
+
+button {
+  border: none;
+  background: none;
+}
+
+input,
+textarea {
+  outline: none;
+}

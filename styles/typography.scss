@@ -1,0 +1,47 @@
+@use "@styles/variables" as *;
+
+body {
+  font-family: var(--font-body);
+  color: $color-text;
+  font-size: 16px;
+  line-height: 1.7;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-heading);
+  font-weight: 400;
+  color: $color-black;
+}
+
+h1 {
+  font-size: clamp(64px, 8vw, 120px);
+  line-height: .95;
+}
+
+h2 {
+  font-size: clamp(42px, 5vw, 72px);
+  line-height: 1;
+}
+
+h3 {
+  font-size: 42px;
+}
+
+p {
+  color: $color-text;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+button {
+  font: inherit;
+  cursor: pointer;
+}

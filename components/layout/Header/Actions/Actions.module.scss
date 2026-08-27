@@ -1,0 +1,18 @@
+@use "@styles/variables" as *;
+@use "@styles/mixins" as *;
+
+.header {
+  position: fixed;
+  inset-inline: 0;
+  top: 0;
+
+  z-index: 1000;
+}
+
+.wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  height: 88px;
+}

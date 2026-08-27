@@ -1,0 +1,261 @@
+@use "@styles/variables" as *;
+@use "@styles/mixins" as *;
+
+.item {
+  border-top: 1px solid rgba(0, 0, 0, 0.08);
+
+  &:last-child {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+  }
+}
+
+.header {
+  width: 100%;
+
+  display: grid;
+  grid-template-columns: 460px 420px 160px;
+  justify-content: space-between;
+  align-items: start;
+
+  padding: 54px 0 24px;
+
+  background: transparent;
+  border: none;
+  cursor: pointer;
+}
+.headerCenter{
+    display:flex;
+    align-items:flex-start;
+}
+
+.description{
+    margin:0;
+    max-width:420px;
+
+    font-size:14px;
+    line-height:1.8;
+    color:#5E5E5E;
+    font-weight:300;
+}
+.header:hover {
+  opacity: .95;
+}
+.headerLeft{
+    display:flex;
+    align-items:flex-start;
+    gap:38px;
+}
+
+.number{
+    width:42px;
+    color:#C9A84C;
+    font-size:13px;
+    letter-spacing:.28em;
+    text-transform:uppercase;
+    margin-top:18px;
+}
+.title {
+  margin: 0;
+  font-size: clamp(28px, 3.8vw, 56px);
+  font-weight: 400;
+  line-height: .92;
+  letter-spacing: -.03em;
+  color: #1B1715;
+}
+.subtitle{
+  margin-top: 8px;
+  font-family: "Playfair Display", serif;
+  font-style: italic;
+  font-size: 16px;
+  font-weight: 400;
+
+  color: #C7B6A3;
+}
+.open .title{
+    color:#7A1E2C;
+}
+
+.headerRight{
+    display:flex;
+    justify-content:flex-end;
+    align-items:flex-start;
+    gap:18px;
+}
+
+.counter{
+    font-size: 9px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: #b8ad9e;
+    transition: color 0.4s;
+    font-weight: 300;
+}
+.icon{
+    font-family: Inter, system-ui, sans-serif;
+    font-size: 18px;
+    color: #b8ad9e40;
+    transform: rotate(0deg);
+    transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1),
+     color 0.4s;
+    display: inline-block;
+    line-height: 1;
+    margin-top: 6px;
+}
+
+.iconOpen{
+font-family: Inter, system-ui, sans-serif;
+    font-size: 18px;
+    color: #c9a84c;
+    transform: rotate(90deg);
+    transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1),
+     color 0.4s;
+    display: inline-block;
+    line-height: 1;
+    margin-top: 6px;
+}
+.content{
+     display:grid;
+    grid-template-rows:0fr;
+    transition:grid-template-rows .6s ease;
+}
+
+.contentOpen{
+ grid-template-rows: 1fr;
+}
+
+.contentInner{
+    overflow:hidden;
+}
+.intro {
+    display:grid;
+    grid-template-columns: 460px 420px;
+    justify-content: space-between;
+    align-items:start;
+    margin:0 0 36px;
+    padding-bottom:36px;
+    border-bottom:1px solid rgba(0,0,0,.08);
+}
+
+.introLeft {
+  display: flex;
+  justify-content: flex-start;
+  padding-left:83px;
+}
+
+.introRight {
+    display:flex;
+    justify-content:flex-start;
+}
+.introRight p{
+    margin:0;
+    max-width:430px;
+    width:100%;
+    font-size:14px;
+    line-height:1.85;
+    color:#5E5E5E;
+}
+.intro h4{
+    margin:0;
+    font-size:16px;
+    font-style:italic;
+    color:#C4B39F;
+    line-height: 1.2;
+}
+
+.gallery {
+    display:grid;
+    grid-template-columns:repeat(5,1fr);
+    gap:22px;
+    padding-top:40px;
+}
+
+.photo{
+  position: relative;
+  width: 200px;
+   height:230px;
+aspect-ratio:0.78;
+  overflow: hidden;
+background:#f4efe7;
+}
+
+.image {
+  object-fit: cover;
+  transition:
+    transform .8s cubic-bezier(.22,.61,.36,1),
+    filter .45s ease;
+}
+.brand{
+  display:flex;
+  flex-direction:column;
+}
+
+.brand:hover h5{
+  color:#7A1E2C;
+}
+
+.brand:hover .image {
+  transform: scale(1.04);
+}
+//Подписи
+.info{
+    margin-top:2px;
+}
+.info span{
+     font-size: 9px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: rgb(44, 74, 62);
+    opacity: 0.85;
+    font-weight: 300;
+}
+.info span::before {
+  width: 5px;
+  height: 5px;
+  background: #A6282F;
+}
+
+.info h5 {
+    font-size: 21px;
+    font-weight: 400;
+    color: #1a1714;
+    letter-spacing: -0.01em;
+    line-height: 1.1;
+    margin-bottom: 4px;
+}
+
+.info p {
+    margin-top:8px;
+    font-style:italic;
+    font-size:20px;
+    color:#B9AA97;
+}
+
+//FOOTER
+.footer{
+    margin-top:30px;
+    display:flex;
+    justify-content:flex-end;
+    margin-bottom: 30px;
+}
+.more{
+    border:1px solid #DDD3C8;
+    background:transparent;
+    font-size: 9px;
+    letter-spacing: 0.22em;
+    color:#3D2D22;
+    transition:.35s;
+    cursor: pointer;
+    padding: 11px 24px;
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    font-weight: 300;
+}
+
+.more:hover{
+    color: #7a1e2c;
+    background: none;
+    border: 1px solid #7a1e2c;
+    cursor: pointer;
+    transition: color 0.25s, border-color 0.25s;
+}

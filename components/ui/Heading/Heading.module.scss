@@ -1,0 +1,46 @@
+@use "@styles/variables" as *;
+
+.heading {
+  max-width: 720px;
+}
+
+.left {
+  text-align: left;
+}
+
+.center {
+  margin-inline: auto;
+  text-align: center;
+}
+
+.eyebrow {
+  display: inline-block;
+
+  margin-bottom: $space-4;
+
+  color: $color-primary;
+
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: .2em;
+  text-transform: uppercase;
+}
+
+.title {
+  margin-bottom: $space-6;
+
+  color: $color-black;
+
+  font-family: var(--font-heading);
+  font-size: clamp(130px,10vw,180px);
+  line-height:.88;
+  font-weight: 400;
+
+}
+
+.description {
+  color: $color-gray-500;
+
+  font-size: 18px;
+  line-height: 1.8;
+}

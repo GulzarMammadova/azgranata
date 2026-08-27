@@ -1,0 +1,31 @@
+@use "@styles/variables" as *;
+
+@mixin flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@mixin flex-between {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+@mixin flex-column {
+  display: flex;
+  flex-direction: column;
+}
+
+@mixin transition {
+  transition: all $transition-base;
+}
+
+@mixin section-padding {
+  padding: 120px 0;
+}
+
+@mixin container {
+  width: min(100% - 64px, $container-width);
+  margin-inline: auto;
+}
