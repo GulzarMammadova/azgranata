@@ -124,6 +124,7 @@ font-family: Inter, system-ui, sans-serif;
 }
 
 .contentInner{
+      position: relative;
     overflow:hidden;
 }
 .intro {
@@ -232,24 +233,46 @@ background:#f4efe7;
 
 //FOOTER
 .footer{
-    margin-top:30px;
-    display:flex;
-    justify-content:flex-end;
-    margin-bottom: 30px;
+position: relative;
+  z-index: 20;
+
+  margin-top: 30px;
+  margin-bottom: 30px;
+
+  display: flex;
+  justify-content: flex-end;
+
+  pointer-events: auto;
 }
 .more{
-    border:1px solid #DDD3C8;
-    background:transparent;
-    font-size: 9px;
-    letter-spacing: 0.22em;
-    color:#3D2D22;
-    transition:.35s;
-    cursor: pointer;
-    padding: 11px 24px;
-    display: inline-flex;
-    align-items: center;
-    gap: 12px;
-    font-weight: 300;
+.more {
+  position: relative;
+  z-index: 21;
+
+  border: 1px solid #DDD3C8;
+  background: transparent;
+
+  font-size: 9px;
+  letter-spacing: 0.22em;
+  color: #3D2D22;
+
+  padding: 11px 24px;
+
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+
+  font-weight: 300;
+
+  cursor: pointer;
+  pointer-events: auto;
+
+  text-decoration: none;
+
+  transition:
+    color 0.25s ease,
+    border-color 0.25s ease;
+}
 }
 
 .more:hover{

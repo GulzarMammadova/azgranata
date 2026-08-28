@@ -3,6 +3,7 @@
 import Image from "next/image";
 import styles from "./AccordionItem.module.scss";
 import type { Category } from "./data";
+import Link from "next/link";
 
 interface AccordionItemProps {
   category: Category;
@@ -98,16 +99,19 @@ export default function AccordionItem({
           </div>
 
           {/* Footer */}
-
-          <div className={styles.footer}>
-            <button
-              type="button"
-              className={styles.more}
-            >
-              SEE ALL
-              <span>→</span>
-            </button>
-          </div>
+<div className={styles.footer}>
+  <Link
+  href={`/categories/${
+    category.id === "softdrinks"
+      ? "juices"
+      : category.id
+  }`}
+  className={styles.more}
+>
+  SEE ALL
+  <span>→</span>
+</Link>
+</div>
         </div>
       </div>
     </article>

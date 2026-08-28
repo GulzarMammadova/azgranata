@@ -4,6 +4,7 @@ import { motion, useScroll, useTransform } from "framer-motion";
 import { ArrowRight, Menu, X, ChevronLeft, ChevronRight } from "lucide-react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import Link from "next/link";
 
 gsap.registerPlugin(ScrollTrigger);
 ScrollTrigger.defaults({ toggleActions: "play none none none" });
@@ -1011,14 +1012,57 @@ function HouseSection() {
                     {panel.brands.map((brand, bi) => <HouseBrandCard key={brand.name} brand={brand} visible={isOpen} delay={isMobile ? 0 : 0.15 + bi * 0.055} />)}
                   </div>
                   {/* See All button */}
-                  <div style={{ paddingLeft: "clamp(20px, 3vw, 52px)", paddingRight: "clamp(20px, 3vw, 52px)", paddingBottom: "clamp(24px, 3vw, 40px)", display: "flex", justifyContent: "flex-end", opacity: isOpen ? 1 : 0, transition: "opacity 0.4s ease 0.2s" }}>
-                    <button
-                      style={{ fontFamily: sans, fontSize: "9px", letterSpacing: "0.22em", textTransform: "uppercase" as const, color: C.dark, background: "none", border: `1px solid ${C.stoneDim}`, cursor: "pointer", padding: "11px 24px", display: "inline-flex", alignItems: "center", gap: "12px", fontWeight: 300, transition: "color 0.25s ease, border-color 0.25s ease" }}
-                      onMouseEnter={(e) => gsap.to(e.currentTarget, { color: "#7A1E2C", borderColor: "#7A1E2C", duration: 0.25 })}
-                      onMouseLeave={(e) => gsap.to(e.currentTarget, { color: C.dark, borderColor: C.stoneDim, duration: 0.25 })}>
-                      See All <ArrowRight size={9} />
-                    </button>
-                  </div>
+<div
+  style={{
+    paddingLeft: "clamp(20px, 3vw, 52px)",
+    paddingRight: "clamp(20px, 3vw, 52px)",
+    paddingBottom: "clamp(24px, 3vw, 40px)",
+    display: "flex",
+    justifyContent: "flex-end",
+    opacity: isOpen ? 1 : 0,
+    transition: "opacity 0.4s ease 0.2s",
+  }}
+>
+  <Link
+    href={
+      panel.id === "softdrinks"
+        ? "/categories/juices"
+        : `/categories/${panel.id}`
+    }
+    style={{
+      fontFamily: sans,
+      fontSize: "9px",
+      letterSpacing: "0.22em",
+      textTransform: "uppercase",
+      color: C.dark,
+      background: "none",
+      border: `1px solid ${C.stoneDim}`,
+      padding: "11px 24px",
+      display: "inline-flex",
+      alignItems: "center",
+      gap: "12px",
+      fontWeight: 300,
+      transition: "color 0.25s ease, border-color 0.25s ease",
+      textDecoration: "none",
+    }}
+    onMouseEnter={(e) =>
+      gsap.to(e.currentTarget, {
+        color: "#7A1E2C",
+        borderColor: "#7A1E2C",
+        duration: 0.25,
+      })
+    }
+    onMouseLeave={(e) =>
+      gsap.to(e.currentTarget, {
+        color: C.dark,
+        borderColor: C.stoneDim,
+        duration: 0.25,
+      })
+    }
+  >
+    See All <ArrowRight size={9} />
+  </Link>
+</div>
                 </div>
               </div>
             </Reveal>
